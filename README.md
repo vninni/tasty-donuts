@@ -20,7 +20,11 @@ import TastyDonut from 'tasty-donuts'
 class Example extends Component {
   render () {
     return (
-      <TastyDonut />
+      <TastyDonut
+          stepNumber={10}
+          gap={5}
+          completed={7}
+        />
     )
   }
 }
