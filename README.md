@@ -30,6 +30,8 @@ class Example extends Component {
 }
 ```
 
+![Demo Donut](../assets/donut.png?raw=true)
+
 ## License
 
 MIT © [](https://github.com/)
