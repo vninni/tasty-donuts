@@ -1,8 +1,31 @@
-/* add css styles here (optional) */
+.donut {
+  --s:20px; /* the size*/
+  height: 190px;
+  width: 190px;
+  position:relative;
+  display:block;
+  overflow:hidden;
+  margin: 0 auto;
+}
+.donut > * {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border:var(--s) solid transparent;
+  background:
+     linear-gradient(#fff,#fff) padding-box,
+     conic-gradient(from calc(-1*var(--d,0deg)), #00d7c1, #6d22e9, #00d7c1) border-box;
+  border-radius:50%;
+  
+  transform: rotate(var(--d,0deg));  
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.emptystate {
+  border: var(--s) solid var(--c, #f1f1f1) !important;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    conic-gradient(from calc(-1*var(--d, 0deg)), #fff, #fff) border-box !important;
+  border-radius: 50%;
 }

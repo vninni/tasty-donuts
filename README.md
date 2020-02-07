@@ -15,12 +15,12 @@ npm install --save tasty-donuts
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'tasty-donuts'
+import TastyDonut from 'tasty-donuts'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <TastyDonut />
     )
   }
 }
