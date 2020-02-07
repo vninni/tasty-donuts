@@ -4,6 +4,10 @@
 
 [![NPM](https://img.shields.io/npm/v/tasty-donuts.svg)](https://www.npmjs.com/package/tasty-donuts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+## Demo Page
+
+You can find a demo [Here](https://yuledev.github.io/tasty-donuts/) 
+
 ## Install
 
 ```bash
