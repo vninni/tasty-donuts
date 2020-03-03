@@ -7,11 +7,12 @@ export default class TastyDonut extends Component {
   static propTypes = {
     stepNumber: PropTypes.number,
     gap: PropTypes.number,
-    completed: PropTypes.number
+    completed: PropTypes.number,
+    type: PropTypes.string
   }
 
   render() {
-    const { stepNumber, gap, completed } = this.props
+    const { stepNumber, gap, completed, type } = this.props
     const step = 360 / stepNumber
     const magicNumber =
       stepNumber > 2 && stepNumber < 9
@@ -31,27 +32,41 @@ export default class TastyDonut extends Component {
           100% calc(${magicNumber}% - var(--g)/2),
           50% calc(50% - var(--g)/2))`
 
+    const renderPercentage = () => {
+      const percentage = ((completed / stepNumber) * 100).toFixed()
+      return `${percentage} % completed`
+    }
+
+    const renderStep = () => {
+      return `${completed} out of ${stepNumber} completed`
+    }
+
     return (
-      <div className={styles.donut} style={{ '--g': `${gap}px` }}>
-        {Array.from(Array(stepNumber), (e, i) => {
-          return (
-            <div
-              key={i}
-              style={{
-                '--d': `${step + step * i}deg`,
-                clipPath:
-                  stepNumber > 2 && stepNumber < 9
-                    ? stepStyleLower
-                    : stepStyleGreater
-              }}
-              className={
-                completed > i + 1 || (completed >= 1 && i + 1 === stepNumber)
-                  ? ''
-                  : styles.emptystate
-              }
-            />
-          )
-        })}
+      <div className={styles.wrapper}>
+        <div className={styles.donut} style={{ '--g': `${gap}px` }}>
+          {Array.from(Array(stepNumber), (e, i) => {
+            return (
+              <div
+                key={i}
+                style={{
+                  '--d': `${step + step * i}deg`,
+                  clipPath:
+                    stepNumber > 2 && stepNumber < 9
+                      ? stepStyleLower
+                      : stepStyleGreater
+                }}
+                className={
+                  completed > i + 1 || (completed >= 1 && i + 1 === stepNumber)
+                    ? ''
+                    : styles.emptystate
+                }
+              />
+            )
+          })}
+        </div>
+        <span className={styles.status}>
+          {type === 'step' ? renderStep() : renderPercentage()}
+        </span>
       </div>
     )
   }

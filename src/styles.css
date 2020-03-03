@@ -1,3 +1,10 @@
+.wrapper {
+  height: 190px;
+  width: 190px;
+  position: relative;
+  margin: 0 auto;
+}
+
 .donut {
   --s:20px; /* the size*/
   height: 190px;
@@ -5,7 +12,6 @@
   position:relative;
   display:block;
   overflow:hidden;
-  margin: 0 auto;
 }
 .donut > * {
   position:absolute;
@@ -28,4 +34,12 @@
     linear-gradient(#fff, #fff) padding-box,
     conic-gradient(from calc(-1*var(--d, 0deg)), #fff, #fff) border-box !important;
   border-radius: 50%;
+}
+
+.status {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }

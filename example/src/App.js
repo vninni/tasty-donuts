@@ -11,7 +11,8 @@ export default class App extends Component {
     this.state = {
       stepNumber: 3,
       gap: 5,
-      completed: 0
+      completed: 0,
+      type: 'percentage'
     }
   }
   render() {
@@ -26,8 +27,20 @@ export default class App extends Component {
           stepNumber={this.state.stepNumber}
           gap={this.state.gap}
           completed={this.state.completed}
+          type={this.state.type}
         />
         <div style={{ marginTop: '50px' }}>
+          <label>
+            Type &nbsp;
+            <select
+              id="type"
+              onChange={event => this.setState({ type: event.target.value })}
+              value={this.state.type}
+            >
+              <option value="percentage">Percentage</option>
+              <option value="step">Step</option>
+            </select>
+          </label>
           <label>
             Step Number
             <InputRange
