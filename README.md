@@ -28,6 +28,7 @@ class Example extends Component {
           stepNumber={10}
           gap={5}
           completed={7}
+          type='percentage'
         />
     )
   }
