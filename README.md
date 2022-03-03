@@ -6,7 +6,7 @@
 
 ## Demo Page
 
-You can find a demo [Here](https://yuledev.github.io/tasty-donuts/) 
+You can find a demo [Here](https://vninni.github.io/tasty-donuts/) 
 
 ## Install
 
